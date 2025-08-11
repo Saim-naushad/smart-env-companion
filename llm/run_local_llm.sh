@@ -3,7 +3,7 @@
 # Path to your model (adjust if different)
 MODEL_PATH="../models/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf"
 
-# Simple user prompt (we’ll let --chat-template handle formatting)
+# Simple user prompt 
 PROMPT="What is the air quality today?"
 
 # Run using llama.cpp with ChatML auto-formatting
