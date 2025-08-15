@@ -1,0 +1,45 @@
+Follow these steps to set up and run the temperature sensor script on your Raspberry Pi.
+
+STEP 1
+
+# Create the main project directory
+mkdir -p ~/temperature-project
+cd ~/temperature-project
+
+#copy the entire temperature reading folder into your directory from GitHub by cloning.
+
+# Navigate into the Temperature Reading folder
+cd "Temperature Reading"
+
+STEP 2
+
+# Create a virtual environment in this folder
+python3 -m venv venv
+
+# Activate the virtual environment
+source venv/bin/activate
+
+STEP 3
+
+# Install the required libraries
+pip install adafruit-blinka adafruit-circuitpython-mcp9808
+
+STEP 4
+
+# Make sure you're in the "Temperature Reading" folder
+# and the virtual environment is activated
+# (You should see (venv) at the start of your command prompt)
+
+# Run the script
+python temp_reader.py
+
+You should see readings every 60 seconds
+
+Important Notes:
+The script will create a JSON file at ~/temperature.json with the latest reading
+To stop the script, press Ctrl+C
+You must activate the virtual environment each time you open a new terminal before running the script:
+bash
+Copy code
+cd ~/temperature-project/"Temperature Reading"
+source venv/bin/activate
