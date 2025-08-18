@@ -1,6 +1,6 @@
 # 🧠 TinyLLaMA Local Setup Guide
 
-This document explains how to set up and run the TinyLLaMA model locally using llama.cpp
+This document explains how to set up and run the TinyLLaMA model on Pi using llama.cpp
 
 ## 1. Install 
 
@@ -20,10 +20,12 @@ This document explains how to set up and run the TinyLLaMA model locally using l
 
 ## 3. Donwload model
 
-tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf
+~/models/Llama-3.2-3B-Instruct-Q4_K_M.gguf
 
 ## 4. Run the model
 
-`cd llm`
+`export LLAMA_BIN=~/llama.cpp/build/bin/llama-cli`
 
-`./run_local_llm.sh`
+`export LLAMA_BIN=~/llama.cpp/build/bin/llama-cli`
+
+`./llm/run_local_llm.sh --json ./temperature.json`
