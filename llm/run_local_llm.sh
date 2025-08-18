@@ -7,7 +7,6 @@ set -euo pipefail
 # Usage:
 #   ./llm/run_local_llm.sh --json ./temperature.json
 #   ./llm/run_local_llm.sh --json ./temperature.json "Is it comfortable to work now?"
-#   ./llm/run_local_llm.sh                          # REPL
 #
 # Flags:
 #   --json <path>       read this file for the latest reading
