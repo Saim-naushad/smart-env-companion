@@ -207,3 +207,10 @@ marimo/_lsp/
 __marimo__/
 models/*.gguf
 llama.cpp/
+
+
+
+node_modules/
+venv/
+__pycache__/
+*.pyc

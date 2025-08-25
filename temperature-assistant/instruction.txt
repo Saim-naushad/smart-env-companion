@@ -1,0 +1,90 @@
+#Running the whole thing
+
+Step 1: Get the Code
+Copy code
+# If you haven't cloned the repo yet:
+git clone https://github.com/Saim-naushad/smart-env-companion.git
+
+# If you already have the repo, just pull the latest changes:
+cd smart-env-companion
+git pull
+Step 2: Set Up Flask API
+Copy code
+# Create virtual environment (if you don't have one already)
+python3 -m venv venv
+
+# Activate virtual environment
+source venv/bin/activate
+
+# Install requirements
+pip install flask flask-cors
+
+# Go to api directory
+cd temperature-assistant/api
+Step 3: Update the Flask API Paths
+Edit the app.py file to update these two paths:
+
+Copy code
+nano app.py
+Change these lines to match your setup:
+
+python
+Copy code
+# Update these paths to match your system
+TEMP_JSON_PATH = os.path.expanduser("~/temperature.json")
+LLM_SCRIPT_PATH = os.path.expanduser("~/llm/run_local_llm.sh")
+Step 4: Set Up Express Backend
+bash
+Copy code
+# Go to the backend directory
+cd ~/smart-env-companion/temperature-assistant/web/backend
+
+# Install Node.js dependencies
+npm install
+Step 5: Run the System (3 Terminal Windows)
+Terminal 1: Run Flask API
+
+Copy code
+# Make sure you're in the right directory
+cd ~/smart-env-companion/temperature-assistant/api
+
+# Activate virtual environment if not already activated
+source ~/smart-env-companion/venv/bin/activate
+
+# Start Flask API
+python app.py
+Terminal 2: Run Express Backend
+
+Copy code
+# Go to backend directory
+cd ~/smart-env-companion/temperature-assistant/web/backend
+
+# Run the server
+node server.js
+Terminal 3: Check temperature.json file
+
+bash
+Copy code
+# Check if the file exists and has content
+cat ~/temperature.json
+
+# Make sure run_local_llm.sh is executable
+chmod +x ~/llm/run_local_llm.sh
+Step 6: Access the Web Interface
+Open a web browser on the Raspberry Pi
+Go to: http://localhost:3000
+Troubleshooting Tips
+If you see "Failed to fetch temperature data":
+
+Check if temperature.json file exists and has content
+Make sure the path in app.py is correct
+If you see "Failed to get response from LLM":
+
+Make sure run_local_llm.sh is executable: chmod +x ~/llm/run_local_llm.sh
+Check if the path to the script in app.py is correct
+Try running the script directly: ~/llm/run_local_llm.sh --json ~/temperature.json "Is this comfortable?"
+If the webpage doesn't load at all:
+
+Make sure Express server is running
+Try restarting it with: node server.js
+Check console for any error messages

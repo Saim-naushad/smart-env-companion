@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Assistant</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>Temperature Assistant</h1>
+      <p>Real-time temperature monitoring with Llama 3.2</p>
+    </header>
+    
+    <!-- Temperature display -->
+    <div class="temp-card">
+      <h2>Current Temperature</h2>
+      <div class="temp-reading">
+        <span id="temp-celsius">--</span><span class="unit">°C</span> / 
+        <span id="temp-fahrenheit">--</span><span class="unit">°F</span>
+      </div>
+      <p class="timestamp">Last updated: <span id="timestamp">--</span></p>
+      <button id="refresh-btn">Refresh</button>
+    </div>
+    
+    <!-- Question input -->
+    <div class="input-section">
+      <h2>Ask About Temperature</h2>
+      <textarea id="question-input" placeholder="e.g., Is this temperature comfortable?"></textarea>
+      <button id="ask-button">Ask</button>
+    </div>
+    
+    <!-- Response area -->
+    <div class="response-area">
+      <h3>AI Response</h3>
+      <div id="response-container">
+        <p class="placeholder-text">Ask a question to get a response.</p>
+      </div>
+    </div>
+    
+    <!-- Example questions -->
+    <div class="examples">
+      <h3>Example Questions</h3>
+      <div class="example-buttons">
+        <button class="example-btn" data-question="Is this temperature comfortable?">Is this comfortable?</button>
+        <button class="example-btn" data-question="What should I wear in this temperature?">What to wear?</button>
+        <button class="example-btn" data-question="Should I turn on the AC?">Turn on AC?</button>
+      </div>
+    </div>
+    
+    <footer>
+      Temperature Assistant | Raspberry Pi + MCP9808 + Llama 3.2
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
